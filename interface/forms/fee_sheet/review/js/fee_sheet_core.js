@@ -145,7 +145,7 @@ function tag_justify_rows(display)
 
 function setup_core()
 {
-    codeselect=codeselect_and_save;
+//    codeselect=codeselect_and_save;
     tag_justify_rows($(display_table_selector));
 }
 
