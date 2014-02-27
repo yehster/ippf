@@ -40,7 +40,9 @@ function toggleFrame1(fnum) {
 	padding: 0;
 	z-index: 30;
 }
-
+#sddm div{
+    z-index:30;
+}
 </style>
 <script type="text/javascript" language="javascript">
 
@@ -211,10 +213,17 @@ if (sqlNumRows($lres)) {
 				.urlencode($option_id) ."' >" . xl_form_title($title) . "</a></td></tr>";
   }
 }
+$fee_sheet_link="<li><a href='#' onclick='gotoFee_sheet()'>".xlt("Fee Sheet")."</a></li>";
 if($StringEcho){
-  $StringEcho.= "</table></div></li></ul>".$StringEcho2;
+  $StringEcho.= "</table></div></li>".$fee_sheet_link."</ul>".$StringEcho2;
 }
 ?>
+<script>
+    function gotoFee_sheet()
+    {
+        top.left_nav.loadFrame2('cod2','RBot','patient_file/encounter/load_form.php?formname=fee_sheet');
+    }
+</script>
 <table cellspacing="0" cellpadding="0" align="center">
   <tr>
     <td valign="top"><?php echo $StringEcho; ?></td>
